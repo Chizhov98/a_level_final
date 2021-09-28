@@ -14,7 +14,7 @@ import java.util.List;
 public class SpeakerResponseDto extends UserResponseDto{
     private List<Course> course;
 
-    SpeakerResponseDto(Speaker speaker){
+    public SpeakerResponseDto(Speaker speaker){
         BeanUtils.copyProperties(speaker,this);
     }
 }
