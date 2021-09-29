@@ -24,6 +24,6 @@ public class Course {
     @Transient
     private int durationInHours;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     List<Lesson> lessons;
 }

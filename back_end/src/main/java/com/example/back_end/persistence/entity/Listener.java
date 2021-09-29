@@ -13,6 +13,6 @@ import java.util.List;
 @Entity
 @Table(name = "listener")
 public class Listener extends AbstracktUser{
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Course> course;
 }

@@ -35,7 +35,8 @@ public abstract class AbstracktUser {
     private String email;
     @Column(name = "birth_day")
     private Date birthDay;
-
+    @Column(nullable = false)
+    private String password;
     @Transient
     private String fullName;
 

@@ -16,4 +16,5 @@ public abstract class UserResponseDto implements ResponseDto {
     private Date birthDay;
     private String fullName;
     private Integer age;
+    private String password;
 }

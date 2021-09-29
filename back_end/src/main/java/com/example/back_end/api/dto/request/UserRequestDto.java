@@ -14,4 +14,5 @@ public abstract class UserRequestDto implements RequestDto{
     private String email;
     private Date birthDay;
     private List<Long> courses_id;
+    private String password;
 }
