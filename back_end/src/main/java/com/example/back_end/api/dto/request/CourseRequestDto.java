@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class CourseRequestDto  implements RequestDto{
+public class CourseRequestDto implements RequestDto {
     private String title;
     List<Long> lessons_id;
 }

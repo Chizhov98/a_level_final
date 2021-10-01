@@ -11,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
-public class LessonResponseDto implements ResponseDto{
+public class LessonResponseDto implements ResponseDto {
     private Date startDate;
     private String title;
     private int hours;

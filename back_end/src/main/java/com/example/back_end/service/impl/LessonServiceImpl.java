@@ -1,6 +1,6 @@
 package com.example.back_end.service.impl;
 
-import com.example.back_end.exeptiom.RestBadRequestException;
+import com.example.back_end.exeption.RestBadRequestException;
 import com.example.back_end.persistence.entity.Lesson;
 import com.example.back_end.persistence.repository.LessonRepository;
 import com.example.back_end.service.LessonService;
@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Service
 public class LessonServiceImpl implements LessonService {
     private LessonRepository repository;
@@ -21,19 +22,25 @@ public class LessonServiceImpl implements LessonService {
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void create(Lesson lesson) {
-        repository.save(lesson);
+        if (!repository.existsById(lesson.getId())) {
+            repository.save(lesson);
+        } else throw new RestBadRequestException("This lesson is already exist");
     }
 
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void update(Lesson lesson) {
-    repository.save(lesson);
+        if (repository.existsById(lesson.getId())) {
+            repository.save(lesson);
+        } else throw new RestBadRequestException("This lesson is not exist");
     }
 
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void delete(Long id) {
-        repository.deleteById(id);
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+        } else throw new RestBadRequestException("This lesson is not exist");
     }
 
     @Override

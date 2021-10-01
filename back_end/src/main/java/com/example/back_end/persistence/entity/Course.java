@@ -14,7 +14,7 @@ import java.util.List;
 @EntityListeners({
         DurationEntityListener.class
 })
-@Table(name = "corse")
+@Table(name = "course")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,4 +1,4 @@
-package com.example.back_end.exeptiom;
+package com.example.back_end.exeption;
 
 public class RestBadRequestException extends RestException {
 

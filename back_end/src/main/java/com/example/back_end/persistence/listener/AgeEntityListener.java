@@ -1,5 +1,5 @@
 package com.example.back_end.persistence.listener;
-import com.example.back_end.persistence.entity.AbstracktUser;
+import com.example.back_end.persistence.entity.User;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
@@ -12,7 +12,7 @@ public class AgeEntityListener {
     @PostLoad
     @PostPersist
     @PreUpdate
-    public void generateAge( AbstracktUser user) {
+    public void generateAge( User user) {
         if (user.getBirthDay() != null) {
             Years years = Years.yearsBetween(new LocalDate(user.getBirthDay()), new LocalDate());
             user.setAge(years.getYears());

@@ -1,4 +1,4 @@
 package com.example.back_end.api.dto.request;
 
-public interface RequestDto  {
+public interface RequestDto {
 }

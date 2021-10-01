@@ -1,4 +1,4 @@
-package com.example.back_end.exeptiom;
+package com.example.back_end.exeption;
 import com.example.back_end.api.dto.response.DataContainer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

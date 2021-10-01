@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class CourseResponseDto implements ResponseDto{
+public class CourseResponseDto implements ResponseDto {
     private String title;
     private int durationInHours;
     List<Lesson> lessons;
